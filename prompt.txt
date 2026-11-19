@@ -1,31 +1,24 @@
-Analyze the complete frontend and backend source code of my internally hosted Task Allocation Portal.
+Code Optimization Suggestion Validation
 
-**My environment:**
-- Windows 11.
-- Frontend and backend source code available.
-- Organization database is not accessible to me.
-- I have authorized organizational login credentials.
-- Portal is hosted on an internal server.
+Review every code optimization suggestion and validate it against the existing source code before recommending implementation.
 
-**Objectives:**
+- Verify whether the suggested optimization is technically correct.
+- Check compatibility with the existing architecture and dependencies.
+- Identify potential side effects and regression risks.
+- Ensure no existing features, options, workflows, or disabled components are removed or altered.
+- Compare the current implementation with the proposed optimized implementation.
+- Identify whether the optimization genuinely improves performance, readability, security, or maintainability.
+- Reject unnecessary or risky optimizations.
 
-1. Identify the technology stack and explain the project structure.
-2. Trace the complete login and authentication mechanism.
-3. Identify the authentication API, backend endpoints, database dependencies and environment variables.
-4. Determine whether I can run the application locally and log in using my organizational credentials.
-5. Identify internal network, VPN, API or IT permissions required.
-6. If real authentication is unavailable, suggest an isolated local testing environment with dummy data.
-7. Explain how to access and test the dashboard locally.
+For each suggestion, provide:
 
-**Strict instructions:**
+1. Suggestion ID.
+2. Current code and file reference.
+3. Proposed improvement.
+4. Technical justification.
+5. Expected benefit.
+6. Potential risks.
+7. Validation result: Valid / Partially Valid / Invalid.
+8. Implementation priority.
 
-- Do not bypass authentication or disable security.
-- Do not modify production authentication.
-- Do not modify any source code during analysis.
-- Do not remove or alter existing features, options, buttons or workflows.
-- Preserve all disabled and unfinished features.
-- Never expose credentials or secrets.
-
-**Deliverables:** Provide the actual project architecture, authentication flow, missing dependencies, local setup instructions and recommended testing approach.
-
-**Most importantly: ANALYZE ONLY. Do not modify anything. Present your findings and wait for my explicit approval before making changes.**
+IMPORTANT: Do not modify any code. Validate and report all suggestions first. Wait for my explicit approval before implementing anything.

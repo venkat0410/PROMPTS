@@ -1,24 +1,31 @@
-Code Optimization Suggestion Validation
+Analyze the entire Task Allocation Portal source code and implement automatic responsive font alignment in the dashboard.
 
-Review every code optimization suggestion and validate it against the existing source code before recommending implementation.
+### Requirements
 
-- Verify whether the suggested optimization is technically correct.
-- Check compatibility with the existing architecture and dependencies.
-- Identify potential side effects and regression risks.
-- Ensure no existing features, options, workflows, or disabled components are removed or altered.
-- Compare the current implementation with the proposed optimized implementation.
-- Identify whether the optimization genuinely improves performance, readability, security, or maintainability.
-- Reject unnecessary or risky optimizations.
+1. Inspect the complete project to identify how styling and dashboard layouts are implemented (CSS, SCSS, inline styles, JavaScript, framework-based styling, or other methods).
+2. Identify all dashboard text elements that require responsive alignment.
+3. Automatically adjust font sizing, positioning, spacing and text alignment according to screen resolution, aspect ratio and browser window size.
+4. Prevent text overlapping, clipping, overflow and inconsistent alignment.
+5. Ensure compatibility across different monitor resolutions and screen sizes.
 
-For each suggestion, provide:
+### Strict Restrictions
 
-1. Suggestion ID.
-2. Current code and file reference.
-3. Proposed improvement.
-4. Technical justification.
-5. Expected benefit.
-6. Potential risks.
-7. Validation result: Valid / Partially Valid / Invalid.
-8. Implementation priority.
+- Do NOT change existing colours or colour schemes.
+- Do NOT change font families, font styles or typography design.
+- Do NOT redesign the dashboard.
+- Do NOT modify existing features, buttons, menus, options or workflows.
+- Do NOT remove disabled or unfinished components.
+- Preserve existing functionality and visual identity.
 
-IMPORTANT: Do not modify any code. Validate and report all suggestions first. Wait for my explicit approval before implementing anything.
+### Execution
+
+- Analyse the entire codebase before making changes.
+- Identify the correct files and implementation approach.
+- Implement responsive alignment using the existing technology and architecture.
+- Avoid unnecessary dependencies and unrelated refactoring.
+- Test the dashboard at different resolutions and aspect ratios.
+- Verify that existing functionality remains unaffected.
+
+**Proceed with implementation without asking for approval. My only requested change is automatic responsive font sizing and alignment. Everything else must remain exactly as it is.**
+
+Provide a summary of modified files, changes made and testing results.

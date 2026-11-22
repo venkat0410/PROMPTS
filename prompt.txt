@@ -1,1 +1,417 @@
-I have valid login credentials (username and password) to test the portal. You may log in and thoroughly inspect its functionality, but **do not trigger, send, or initiate any emails or notifications**. Do not create, modify, delete, submit, approve, or change any data or settings. Perform testing in read-only mode only. **Do not take any action or make any changes without my explicit approval.** If an action requires approval, stop and ask me first. My permission to test the portal does not imply permission to perform any other action.
+# MASTER DEVELOPMENT PROMPT – UNIVERSAL EDA LIBRARY CONVERTER FOR SIEMENS Xpedition 2510
+
+## 1. Your Role
+
+Act as a Senior EDA Software Architect, PCB Library Engineer, Reverse Engineering Specialist, and Full-Stack Software Developer.
+
+Your task is to research, design, and develop a professional engineering application capable of converting electronic component libraries from multiple EDA software platforms into a format compatible with **Siemens Xpedition Enterprise 2510**, which is used in my organisation.
+
+This is intended for actual PCB engineering workflows, not a demonstration or basic file converter.
+
+## 2. Main Objective
+
+Develop a Universal EDA Library Converter that accepts component libraries from different PCB design software platforms and converts their engineering data into Siemens Xpedition 2510-compatible library objects.
+
+The application must support:
+
+- Schematic symbols (CAE).
+- PCB cells / footprints / decals.
+- Component definitions.
+- Pin information and pin-to-pad mapping.
+- Padstacks.
+- Component attributes and metadata.
+- 3D component models.
+- Mechanical and graphical information.
+
+Preserve the original engineering properties as accurately as possible.
+
+## 3. EDA Software and File Formats to Investigate
+
+Research and identify every relevant native library format, exchange format, ASCII format, binary format and archive format.
+
+### A. Siemens PADS
+- .c
+- .p
+- .d
+- .l
+- .pt9
+- .ld9
+- Other relevant PADS library formats.
+
+### B. Cadence Allegro / OrCAD
+- .dra
+- .psm
+- .pad
+- .ssm
+- .fsm
+- .brd
+- .alg
+- .olb
+- .llb
+- .dsn
+- Other relevant formats.
+
+### C. Altium Designer
+- .SchLib
+- .PcbLib
+- .IntLib
+- .LibPkg
+- .DbLib
+- .STEP
+- .STP
+- Other relevant formats.
+
+### D. KiCad
+- .kicad_sym
+- .kicad_mod
+- .pretty
+- .kicad_pcb
+- .lib
+- .mod
+- Other relevant formats.
+
+### E. Autodesk EAGLE
+- .lbr
+- .brd
+- .sch
+
+### F. Zuken
+- CADSTAR
+- CR-5000
+- CR-8000
+- All relevant library exchange formats.
+
+### G. Other EDA Platforms
+- P-CAD
+- EasyEDA / JLCEDA
+- DipTrace
+- Proteus
+- DesignSpark PCB
+- BXL
+- Ultra Librarian
+- SnapEDA
+- IPC-related exchange formats.
+
+### H. Neutral and Mechanical Formats
+- DXF
+- IDF / EMN / EMP
+- STEP / STP
+- IGES / IGS
+- XML
+- CSV
+- JSON
+- Other relevant engineering exchange formats.
+
+IMPORTANT:
+Do not assume that every listed extension represents a directly convertible library file. Investigate the actual format, version, internal structure, dependencies and whether it contains symbols, footprints, padstacks or complete components.
+
+Create a comprehensive format compatibility database.
+
+## 4. Research Requirements
+
+Before writing code, conduct technical research.
+
+For every identified format, document:
+
+1. EDA software name.
+2. File extension.
+3. File purpose.
+4. Whether it is ASCII, binary, XML, JSON or compressed.
+5. Whether the format is publicly documented.
+6. Whether an official parser or SDK exists.
+7. Whether conversion requires the original application.
+8. Whether conversion can be implemented independently.
+9. Which engineering information can be extracted.
+10. Known conversion limitations.
+11. Recommended parsing approach.
+12. Xpedition 2510 output compatibility.
+
+Use official vendor documentation, SDK documentation and verified technical references wherever available.
+
+Never invent file structures or claim unsupported compatibility.
+
+## 5. Conversion Architecture
+
+Use a modular architecture.
+
+Implement the following processing stages:
+
+1. File identification engine.
+2. Source format/version detection.
+3. Source-specific parsers.
+4. Universal Intermediate Representation (IR).
+5. Engineering data normalization.
+6. Unit conversion.
+7. Layer mapping.
+8. Engineering validation.
+9. Xpedition 2510 output generation.
+10. Conversion report generation.
+
+The Intermediate Representation must preserve:
+
+### Schematic Symbol
+- Symbol graphics.
+- Pin numbers.
+- Pin names.
+- Pin electrical types.
+- Pin orientation.
+- Pin placement.
+- Pin length.
+- Symbol origin.
+- Gates and multiple sections.
+- Reference designator.
+- Text attributes.
+
+### PCB Cell / Footprint
+- Pad coordinates.
+- Pad numbers.
+- Pad shapes.
+- Pad dimensions.
+- Rotation.
+- Pad types.
+- Tracks and lines.
+- Arcs and circles.
+- Silkscreen.
+- Assembly outlines.
+- Courtyard.
+- Component origin.
+- Text and reference designators.
+- Mechanical layers.
+
+### Padstack
+- Drill diameter.
+- Finished hole diameter.
+- Plated and non-plated definitions.
+- Top and bottom pads.
+- Inner-layer pads.
+- Solder mask.
+- Paste mask.
+- Thermal information.
+- Annular rings.
+- Layer-specific pad geometry.
+
+### Component Definition
+- Manufacturer.
+- Manufacturer part number.
+- Description.
+- Pin-to-pad mapping.
+- Symbol association.
+- Footprint association.
+- Multiple package options.
+- Electrical properties.
+- Custom attributes.
+
+### 3D Model
+- STEP/STP models.
+- IGES models.
+- Model origin.
+- Rotation.
+- Translation.
+- Component height.
+- Mechanical alignment.
+
+## 6. Siemens Xpedition 2510 Integration
+
+This is the most critical part.
+
+Investigate the actual Siemens Xpedition 2510 library architecture.
+
+Research:
+
+- Library Manager.
+- Library Migration Wizard.
+- Native library database structure.
+- CAE symbols.
+- PCB cells.
+- Padstacks.
+- Parts and components.
+- Pin mapping.
+- Library folders.
+- .lmc and other relevant library files.
+- Supported import/export interfaces.
+- Available automation APIs.
+- Supported command-line operations.
+- Any official SDK or scripting interface.
+
+Investigate whether the application can generate native Xpedition library objects directly.
+
+If direct native generation is unsupported or undocumented, implement a reliable intermediate export and controlled migration workflow using the installed Siemens software.
+
+DO NOT fabricate native Xpedition file formats.
+
+Do not modify organisational production libraries without explicit approval.
+
+## 7. Conversion Validation
+
+Implement an engineering validation system.
+
+Compare source and destination data for:
+
+- Pin count.
+- Pin numbering.
+- Pin names.
+- Pin electrical types.
+- Pad count.
+- Pad numbering.
+- Pad dimensions.
+- Drill dimensions.
+- Padstack assignments.
+- Component origin.
+- Rotation.
+- Symbol geometry.
+- Footprint geometry.
+- Layer assignments.
+- Unit consistency.
+- 3D model positioning.
+
+Generate a detailed conversion report containing:
+
+- Successfully converted objects.
+- Partially converted objects.
+- Unsupported properties.
+- Failed objects.
+- Pin mapping differences.
+- Geometry differences.
+- Missing attributes.
+- Warnings.
+- Errors.
+
+Never silently discard engineering information.
+
+## 8. Application Interface
+
+Develop a professional Windows desktop application.
+
+Suggested modules:
+
+1. Dashboard.
+2. Source Format Explorer.
+3. Library Import.
+4. File Format Detection.
+5. Component Preview.
+6. Symbol Preview.
+7. Footprint Preview.
+8. Padstack Preview.
+9. Layer Mapping.
+10. Conversion Settings.
+11. Batch Conversion.
+12. Engineering Validation.
+13. Difference Comparison.
+14. Conversion History.
+15. Export Manager.
+16. Format Compatibility Database.
+17. Settings.
+
+The interface should support:
+
+- Drag and drop.
+- Multiple file selection.
+- Folder selection.
+- Batch conversion.
+- Before-and-after previews.
+- Conversion progress.
+- Detailed error messages.
+- Export location selection.
+
+## 9. Technical Development Requirements
+
+Evaluate the most suitable technology stack before implementation.
+
+Prefer:
+- Python for parsers and conversion logic.
+- PySide6 for a Windows desktop interface.
+- SQLite for conversion history and format metadata.
+- JSON-based intermediate representation where appropriate.
+- Modular source-specific parsing engines.
+
+You may recommend a different architecture if it offers a clear engineering advantage.
+
+Requirements:
+
+- Windows 10/11 compatibility.
+- Offline operation.
+- No mandatory cloud dependency.
+- No external server requirement.
+- No uploading confidential organisational libraries.
+- No unnecessary installations.
+- Maintainable modular source code.
+- Clear logging and debugging.
+- Extensible plugin-based parser architecture.
+
+## 10. Important Development Rules
+
+1. Research before implementation.
+2. Do not assume file compatibility based only on extensions.
+3. Do not create fake Xpedition files.
+4. Do not claim complete conversion if properties are missing.
+5. Never silently change pin numbering or electrical information.
+6. Preserve original input files.
+7. Maintain source traceability.
+8. Keep all conversion engines independent.
+9. Build automated test cases using sample libraries.
+10. Validate generated objects in the actual Xpedition 2510 installation.
+11. Clearly distinguish verified functionality from experimental functionality.
+12. Do not use proprietary organisational libraries as public training or testing data.
+
+## 11. Development Phases
+
+Follow this sequence:
+
+**Phase 1 – Research and Compatibility Matrix**
+Identify all relevant formats, file structures, dependencies and conversion possibilities.
+
+**Phase 2 – Xpedition Target Investigation**
+Study the installed Xpedition 2510 environment and determine the supported output-generation mechanisms.
+
+**Phase 3 – Application Architecture**
+Define the modular architecture, data structures, parsers and conversion workflow.
+
+**Phase 4 – Core Conversion Engine**
+Implement the universal intermediate data model and source-specific parsers.
+
+**Phase 5 – Xpedition Integration**
+Implement the verified target-generation and migration mechanisms.
+
+**Phase 6 – Engineering Validation**
+Implement geometry, pin mapping, padstack and component comparison.
+
+**Phase 7 – Desktop Application**
+Develop the complete Windows interface.
+
+**Phase 8 – Testing**
+Test each source format using representative sample libraries.
+
+**Phase 9 – Packaging**
+Create a standalone Windows executable with the required dependencies packaged appropriately.
+
+## 12. First Task – DO NOT START CODING
+
+Start by conducting a complete technical feasibility study.
+
+Produce these deliverables:
+
+1. Global EDA file format compatibility list.
+2. Detailed source format and extension database.
+3. Native versus exchange format classification.
+4. ASCII versus binary format classification.
+5. Official documentation and SDK reference list.
+6. Siemens Xpedition 2510 target architecture investigation.
+7. Source-to-Xpedition conversion feasibility matrix.
+8. Unsupported and restricted format list.
+9. Recommended software architecture.
+10. Development roadmap.
+11. Technical risks and engineering limitations.
+
+For each format, classify the conversion status:
+
+- FULLY SUPPORTED – verified extraction and target conversion.
+- PARTIALLY SUPPORTED – some engineering properties cannot be preserved.
+- REQUIRES ORIGINAL SOFTWARE – native export or migration is necessary.
+- REQUIRES RESEARCH – format structure or compatibility is not yet verified.
+- UNSUPPORTED – no reliable conversion route established.
+
+Present the research in structured tables.
+
+Do not begin coding, generate application files or modify any existing project until I review and approve the feasibility study.
+
+The final objective is to build a reliable, extensible Universal EDA Library Converter for our Siemens Xpedition 2510 engineering environment.

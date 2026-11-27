@@ -1,7 +1,3 @@
-After successful conversion, display a confirmation popup with the message:
+Analyse the attached reference image and CSV file carefully to identify the exact grid spacing and apply the same spacing to the Xpedition symbol output during conversion. Use the reference files to determine the correct grid dimensions and alignment.
 
-"Source file has been converted into Xpedition format successfully!"
-
-The popup must also display the complete output file path, with a "Open Output Folder" option and an "OK" button.
-
-Show the popup only after conversion is completed successfully. If conversion fails, display an appropriate error message instead. Maintain the existing UI design and functionality.
+Important: Modify only the Xpedition symbol output grid spacing. Do not change, modify, remove or affect any other existing features, conversion logic, UI elements or functionalities. Preserve all existing behaviour and verify the changes after implementation.
